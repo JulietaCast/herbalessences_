@@ -1,0 +1,205 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  background-image: url("../IMAGENES/fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Container */
+.main-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Title */
+.title {
+  font-family: "Lora", serif;
+  position: absolute;
+  top: 45%;
+  right: 15%;
+  transform: translateY(-50%);
+  color: #0a5e07;
+  font-size: 3.5rem;
+  text-align: left;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.title.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.title.move-left {
+  transform: translate(-150%, -50%);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+
+
+/* Video Container */
+.video-container {
+  position: relative;
+  z-index: 6;
+  transition: transform 0.8s ease;
+}
+
+.video-container video {
+  width: 90%; /* Tamaño reducido */
+  max-width: 600px; /* Límite máximo */
+  height: auto; /* Mantiene proporciones */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transform: translateX(-150px); /* Mueve el video 20px a la izquierda */
+}
+
+
+/* Steps Container */
+.steps-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.steps-container.move-right {
+  transform: translate(30%, -50%);
+  opacity: 1;
+}
+
+/* Individual Steps */
+.step {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.7);
+  color: #00200e;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.step:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.step h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.2rem;
+  color: #204e02;
+}
+
+.step p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.step-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+}
+
+/* Navbar Brand */
+.navbar-brand {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 10;
+}
+
+.logo-img {
+  max-height: 90px;
+  height: auto;
+}
+
+/* Apply Button Container */
+.apply-button-container {
+  position: fixed;
+  bottom: 180px;
+  left: 71%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity 0.3s ease, transform 0.8s ease;
+}
+
+.apply-button-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.apply-button-container.move-left {
+  transform: translate(-250%, 0);
+  transition: transform 0.8s ease, opacity 0.5s ease;
+}
+
+/* Apply Button */
+.apply-button {
+  background-color: #ffffff54;
+  color: #032c0fd5;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  text-align: center;
+}
+
+.apply-button:hover {
+  background-color: #ffffff;
+  transform: scale(1.05);
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .video-container video {
+    width: 80%;
+  }
+
+  .steps-container.move-right {
+    transform: translate(10%, -50%);
+  }
+
+  .step {
+    width: 90%;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}

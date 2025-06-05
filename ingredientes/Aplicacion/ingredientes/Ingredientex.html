@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingredientes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/styles.css">
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark btn-light">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+   
+    <a class="navbar-brand" href="https://julietacast.github.io/HERBALESSENCS/HERBAL.html">
+      <img src="IMAGENES/herbalessences.png" alt="Herbal Essences" class="logo-img">
+    </a>
+    
+</nav>
+
+
+<body>
+  <div class="background">
+    <div class="carousel-container">
+      <button class="arrow left-arrow">&lt;</button>
+      <div class="carousel-images">
+        <div class="carousel-item active" 
+     data-title="Shampoo Agua de Coco y Jazmín" 
+     data-description="Dile adiós al cabello seco gracias a su perfecta infusión de agua de coco, jazmín y aloe vera.<br><ul class='carousel-info'>
+                          <li>Cabello graso</li>
+                          <li>Puntas secas</li>
+                         <li>Cabello fino</li>
+                       </ul>">
+  <img src="IMAGENES/coco.jpg" alt="Imagen 1">
+</div>
+        <div class="carousel-item active" 
+     data-title="Shampoo Té Verde y Menta" 
+     data-description="Su fórmula combina té verde y menta, con un aroma revitalizante de menta, té verde y sándalo.<br><ul class='carousel-info'>
+                          <li>Cabello graso</li>
+                          <li>Cabello con raíces grasas</li>
+                          <li>Cabello sin volumen</li>
+                       </ul>">
+          <img src="IMAGENES/té verde.png.jpg" alt="Imagen 2">
+        </div>
+         <div class="carousel-item active" 
+     data-title="Shampoo Shine con Manzanilla" 
+     data-description="Limpia profundamente, dejando tu cabello brillante y saludable. <br><ul class='carousel-info'>
+                          <li>Cabello rubio</li>
+                          <li>Cabello graso</li>
+                         
+                          <li>Cabello sin volumen</li>
+                       </ul>">
+          <img src="IMAGENES/manzanilla.png.jpg" alt="Imagen 3">
+        </div>
+         <div class="carousel-item active" 
+     data-title="Shampoo Mandarina, Jengibre y Menta" 
+     data-description="Inspirado en ingredientes naturales para que te sientas limpia y fresca todo el día. <br> <ul class='carousel-info'>
+                          <li>Cabello graso</li>
+                          <li>Cabello con raíces grasas</li>
+                       </ul>">
+          <img src="IMAGENES/naranja.png.jpg" alt="Imagen 5">">
+        </div>
+         <div class="carousel-item active" 
+     data-title="Shampoo Smooth con Rosa Mosqueta" 
+     data-description=" Limpia profundamente, realza el brillo natural y deja el cabello suave y saludable. <br><ul class='carousel-info'>
+                          <li>Cabello graso</li>
+                          <li>Cabello fino</li>
+                          <li>Cabello sin volumen</li>
+                         
+                       </ul>">
+          <img src="IMAGENES/rosass.jpg" alt="Imagen 5">
+        </div>
+         <div class="carousel-item active" 
+     data-title="Shampoo Granada y Proteína Vegana" 
+     data-description="Su fórmula con granada y proteína vegana repara el daño, combate la caída y deja tu cabello suave y brillante.<br><ul class='carousel-info'>
+                          <li>Cabello largo</li>
+                          <li>Cabello dañado o maltratado</li>
+                          <li>Cabello débil o quebradizo</li>
+                       </ul>">
+          <img src="IMAGENES/granada.jpg" alt="Imagen 6">
+        </div>
+         <div class="carousel-item active" 
+     data-title="Shampoo Lavanda y Aceite de Almendras" 
+     data-description="Limpia e hidrata tu cabello mientras controla el frizz, dejándolo manejable y fácil de peinar.  <br> <ul class='carousel-info'>
+                          <li>Cabello con frizz</li>
+                          <li>Cabello con daño leve o moderado</li>
+                       </ul>">
+          <img src="IMAGENES/lavanda.jpg" alt="Imagen 7">
+        </div>
+      </div>
+      <button class="arrow right-arrow">&gt;</button>
+    </div>
+    <div class="carousel-info">
+      <h3 id="carousel-title">El alma del ritual</h3>
+      <p id="carousel-description">Sumérgete en la esencia de ingredientes botánicos, el corazón de cada ritual para un cabello sano y radiante.</p>
+    </div>
+<div>
+    <a href="https://julietacast.github.io/HERBALESSENCS_/Aplicacion/Aplicaci%C3%B3n.html" class="apply-button">
+        Aplicarlo
+    </a>
+</div>
+
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const carouselItems = document.querySelectorAll(".carousel-item img");
+
+  carouselItems.forEach((item) => {
+    item.addEventListener("click", () => {
+     
+      carouselItems.forEach((img) => img.classList.remove("clicked"));
+      
+      
+      item.classList.add("clicked");
+
+      
+      setTimeout(() => {
+        item.classList.remove("clicked");
+      }, 300); 
+    });
+  });
+});
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const items = document.querySelectorAll(".carousel-item");
+      const title = document.getElementById("carousel-title");
+      const description = document.getElementById("carousel-description");
+      const leftArrow = document.querySelector(".left-arrow");
+      const rightArrow = document.querySelector(".right-arrow");
+
+      let currentIndex = 0;
+
+      const updateCarousel = (index) => {
+        items.forEach((item, idx) => {
+          item.classList.toggle("active", idx === index);
+        });
+        const activeItem = items[index];
+        title.textContent = activeItem.getAttribute("data-title");
+        description.innerHTML = activeItem.getAttribute("data-description"); // Soporta <br>
+      };
+
+      const handleArrowClick = (direction) => {
+        currentIndex = (currentIndex + direction + items.length) % items.length;
+        updateCarousel(currentIndex);
+      };
+
+      items.forEach((item, index) => {
+        item.addEventListener("click", () => {
+          currentIndex = index;
+          updateCarousel(currentIndex);
+        });
+      });
+
+      leftArrow.addEventListener("click", () => handleArrowClick(-1));
+      rightArrow.addEventListener("click", () => handleArrowClick(1));
+    });
+  </script>
+</body>
+</html>

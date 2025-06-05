@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ritual</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/ESTILOS.css">
+</head>
+<body>
+  <!-- Navbar Brand -->
+  <a class="navbar-brand" href="https://julietacast.github.io/HERBALESSENCS/HERBAL.html">
+    <img src="IMAGENES/herbalessences.png" alt="Herbal Essences" class="logo-img">
+  </a>
+  
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Title -->
+    <div id="title" class="title">Descubre el <br>ritual perfecto <br>para tu cabello<br>
+    <p></p>
+    </div>
+    
+    <!-- Video Container -->
+    <div id="video-container" class="video-container">
+      <video id="video" muted>
+        <source src="IMAGENES/lavar cabello.mp4" type="video/mp4">
+       
+      </video>
+    </div>
+
+    <!-- Steps Container -->
+    <div id="steps-container" class="steps-container">
+      <div class="step">
+        <img src="IMAGENES/paso 1.png" alt="Icono Paso 1" class="step-icon">
+        <div class="step-text">
+          <h3>Paso 1</h3>
+          <p>Moja completamente tu cabello antes de aplicar el shampoo.</p>
+        </div>
+      </div>
+      <div class="step">
+        <img src="IMAGENES/paso2.png" alt="Icono Paso 2" class="step-icon">
+        <div class="step-text">
+          <h3>Paso 2</h3>
+          <p>Aplica una cantidad adecuada de shampoo en tus manos.</p>
+        </div>
+      </div>
+      <div class="step">
+        <img src="IMAGENES/paso3.png" alt="Icono Paso 3" class="step-icon">
+        <div class="step-text">
+          <h3>Paso 3</h3>
+          <p>Masajea suavemente tu cuero cabelludo con movimientos circulares.</p>
+        </div>
+      </div>
+      <div class="step">
+        <img src="IMAGENES/paso4.png" alt="Icono Paso 4" class="step-icon">
+        <div class="step-text">
+          <h3>Paso 4</h3>
+          <p>Enjuaga con abundante agua hasta eliminar los restos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Button -->
+  <div class="apply-button-container">
+    <a href="https://julietacast.github.io/HERBALESSENCS_/Contacto/sostenibilidad.html" class="apply-button">Contacto</a>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const video = document.getElementById("video");
+    const videoContainer = document.getElementById("video-container");
+    const stepsContainer = document.getElementById("steps-container");
+    const title = document.getElementById("title");
+    const contactButton = document.querySelector(".apply-button-container");
+
+    let isPlaying = false; // Estado del video
+
+    video.addEventListener("click", () => {
+      if (isPlaying) {
+        // Pausar video y restaurar título y botón
+        video.pause();
+        title.classList.remove("hidden", "move-left");
+        contactButton.classList.remove("hidden", "move-left");
+        stepsContainer.classList.remove("move-right");
+      } else {
+        // Mover título y botón a la izquierda, luego reproducir video y ocultar
+        title.classList.add("move-left");
+        contactButton.classList.add("move-left");
+        setTimeout(() => {
+          title.classList.add("hidden");
+          contactButton.classList.add("hidden");
+        }, 800); // Espera a que termine el efecto de movimiento antes de ocultar
+        video.play();
+        stepsContainer.classList.add("move-right");
+      }
+      isPlaying = !isPlaying; // Cambiar estado
+    });
+  </script>
+</body>
+</html>
