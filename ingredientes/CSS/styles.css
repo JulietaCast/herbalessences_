@@ -169,6 +169,7 @@ body {
   z-index: 1000; 
 }
 
+
 .apply-button {
   position: fixed; /* Fija el botón en la ventana */
   bottom: 80px; /* Espaciado desde la parte inferior */
@@ -193,6 +194,7 @@ body {
   background-color: white; /* Cambia a blanco al presionar */
   color: #0a5e07; /* Cambia el texto a negro */
 }
+
 
 
 
